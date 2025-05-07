@@ -5,7 +5,7 @@
 /// An object that contains the personalization information for a rewards pass.
 public struct Personalize: Codable, Equatable, Hashable, Sendable {
     /// A brief description of the program for a pass that appears on the signup sheet, under the personalization logo.
-    public var description: String
+    public var personalizationDescription: String
 
     /// An array that identifies the signup data required from the user the system shows on the generated signup form.
     public var requiredPersonalizationFields: [Fields]
@@ -16,13 +16,19 @@ public struct Personalize: Codable, Equatable, Hashable, Sendable {
     public var termsAndConditions: String?
 
     public init(
-        description: String,
+        personalizationDescription: String,
         requiredPersonalizationFields: [Fields],
         termsAndConditions: String? = nil
     ) {
-        self.description = description
+        self.personalizationDescription = personalizationDescription
         self.requiredPersonalizationFields = requiredPersonalizationFields
         self.termsAndConditions = termsAndConditions
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case personalizationDescription = "description"
+        case requiredPersonalizationFields
+        case termsAndConditions
     }
 }
 

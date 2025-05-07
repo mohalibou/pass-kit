@@ -6,7 +6,7 @@ import PassCore
 
 extension Pass {
     public static func boardingPass(
-        description: String,
+        name: String,
         organizationName: String,
         passTypeIdentifier: String,
         serialNumber: String,
@@ -35,7 +35,7 @@ extension Pass {
         webServiceURL: URL? = nil
     ) -> Self {
         self.init(
-            description: description,
+            name: name,
             organizationName: organizationName,
             passTypeIdentifier: passTypeIdentifier,
             serialNumber: serialNumber,
@@ -92,7 +92,7 @@ extension Pass {
     }
 
     public static func coupon(
-        description: String,
+        name: String,
         organizationName: String,
         passTypeIdentifier: String,
         serialNumber: String,
@@ -121,7 +121,7 @@ extension Pass {
         webServiceURL: URL? = nil
     ) -> Self {
         self.init(
-            description: description,
+            name: name,
             organizationName: organizationName,
             passTypeIdentifier: passTypeIdentifier,
             serialNumber: serialNumber,
@@ -178,7 +178,7 @@ extension Pass {
     }
 
     public static func eventTicket(
-        description: String,
+        name: String,
         organizationName: String,
         passTypeIdentifier: String,
         serialNumber: String,
@@ -207,7 +207,7 @@ extension Pass {
         webServiceURL: URL? = nil
     ) -> Self {
         self.init(
-            description: description,
+            name: name,
             organizationName: organizationName,
             passTypeIdentifier: passTypeIdentifier,
             serialNumber: serialNumber,
@@ -264,7 +264,7 @@ extension Pass {
     }
 
     public static func posterEventTicket(
-        description: String,
+        name: String,
         organizationName: String,
         passTypeIdentifier: String,
         serialNumber: String,
@@ -315,7 +315,7 @@ extension Pass {
         webServiceURL: URL? = nil
     ) -> Self {
         self.init(
-            description: description,
+            name: name,
             organizationName: organizationName,
             passTypeIdentifier: passTypeIdentifier,
             serialNumber: serialNumber,
@@ -372,7 +372,7 @@ extension Pass {
     }
 
     public static func generic(
-        description: String,
+        name: String,
         organizationName: String,
         passTypeIdentifier: String,
         serialNumber: String,
@@ -401,7 +401,7 @@ extension Pass {
         webServiceURL: URL? = nil
     ) -> Self {
         self.init(
-            description: description,
+            name: name,
             organizationName: organizationName,
             passTypeIdentifier: passTypeIdentifier,
             serialNumber: serialNumber,
@@ -458,7 +458,7 @@ extension Pass {
     }
 
     public static func storeCard(
-        description: String,
+        name: String,
         organizationName: String,
         passTypeIdentifier: String,
         serialNumber: String,
@@ -487,7 +487,7 @@ extension Pass {
         webServiceURL: URL? = nil
     ) -> Self {
         self.init(
-            description: description,
+            name: name,
             organizationName: organizationName,
             passTypeIdentifier: passTypeIdentifier,
             serialNumber: serialNumber,

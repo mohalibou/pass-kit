@@ -11,7 +11,7 @@ public struct Pass: Codable, Equatable, Hashable, Sendable {
     /// (Required) A short description that iOS accessibility technologies use for a pass.
     ///
     /// Don’t try to include all of the data on the pass in its description, just include enough detail to distinguish passes of the same type.
-    public var description: String
+    public var name: String
 
     /// Version of the file format. The value must be 1.
     public let formatVersion: Int
@@ -272,7 +272,7 @@ public struct Pass: Codable, Equatable, Hashable, Sendable {
     public var webServiceURL: URL?
 
     public init(
-        description: String,
+        name: String,
         organizationName: String,
         passTypeIdentifier: String,
         serialNumber: String,
@@ -326,7 +326,7 @@ public struct Pass: Codable, Equatable, Hashable, Sendable {
         voided: Bool? = nil,
         webServiceURL: URL? = nil
     ) {
-        self.description = description
+        self.name = name
         self.formatVersion = 1
         self.organizationName = organizationName
         self.passTypeIdentifier = passTypeIdentifier
@@ -380,5 +380,14 @@ public struct Pass: Codable, Equatable, Hashable, Sendable {
         self.userInfo = userInfo
         self.voided = voided
         self.webServiceURL = webServiceURL
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "description"
+        case formatVersion
+        case organizationName
+        case passTypeIdentifier
+        case serialNumber
+        case teamIdentifier
     }
 }

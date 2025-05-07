@@ -10,7 +10,7 @@ public struct Personalization: Codable, Equatable, Hashable, Sendable {
     public var requiredPersonalizationFields: [Field]
 
     /// A brief description of the program. This is displayed on the signup sheet, under the personalization logo.
-    public var description: String
+    public var personalizationDescription: String
 
     /// A description of the program’s terms and conditions. This string can contain HTML link tags to external content.
     ///
@@ -20,12 +20,18 @@ public struct Personalization: Codable, Equatable, Hashable, Sendable {
 
     public init(
         requiredPersonalizationFields: [Field],
-        description: String,
+        personalizationDescription: String,
         termsAndConditions: String? = nil
     ) {
         self.requiredPersonalizationFields = requiredPersonalizationFields
-        self.description = description
+        self.personalizationDescription = personalizationDescription
         self.termsAndConditions = termsAndConditions
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case requiredPersonalizationFields
+        case personalizationDescription = "description"
+        case termsAndConditions
     }
 }
 
